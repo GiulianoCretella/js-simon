@@ -9,8 +9,7 @@
 // inserisco al suo interno 5 numeri random controllando che non ci siano ripetizioni
 // creo un timer di trenta secondi 
 // tramite funzione e prompt faccio inserire i numeri che ricorda l'utente
-// ottenuti i 5 numeri li confronto con quelli dell'array
-//  stampo i numeri che trovo uguali
+
 
 // creo funzione per numeri random
 function getRandomInt(min, max){
@@ -44,6 +43,17 @@ function late30(){
         numeriUtente.push(numeriInseriti);
     }
     console.log(numeriUtente);
-    return numeriUtente
+    confrontoNumeri(numeriUtente,pcArray)
+    return numeriUtente   
 }
+// ottenuti i 5 numeri li confronto con quelli dell'array
+//  stampo i numeri che trovo uguali
+function confrontoNumeri(numeriUtente, pcArray){
+    for(let i = 0; i < numeriUtente.length; i++){
+        if(pcArray.includes(i+1)){
+            console.log("li hai ricordati tutti!");
+        }else if(!pcArray.includes(i+1){
 
+        }
+    }
+}
