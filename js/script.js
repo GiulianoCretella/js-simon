@@ -21,26 +21,29 @@ function getRandomInt(min, max){
 // creo un Array
 // creo un ciclo while
 // inserisco al suo interno 5 numeri random controllando che non ci siano ripetizioni
-numberArray=[];
-for( let i = 1; numberArray.length < 5;i++){
+pcArray=[];
+for( let i = 1; pcArray.length < 5;i++){
     let pcNumber = getRandomInt(1, 50)
-    if(!numberArray.includes(pcNumber)){
-        numberArray.push(pcNumber)
+    if(!pcArray.includes(pcNumber)){
+        pcArray.push(pcNumber)
     }
 }
- console.log(numberArray);
+ console.log(pcArray);
 
 let div = document.getElementById('app');
-div.append('Memorizza questi numeri!:' + ' '+ numberArray.join(' - '));
+div.append('Memorizza questi numeri!:' + ' '+ pcArray.join(' - '));
 
 // creo un timer di trenta secondi 
 // tramite funzione e prompt faccio inserire i numeri che ricorda l'utente
+setTimeout(late30, 10000)
 
-numeriUtente=[];
-setTimeout(numeriMemorizzati, 3000);
-function numeriMemorizzati(){
-    numeriUser = prompt('ricordi i numeri?');
-    numeriUtente.push(numeriUser)
+function late30(){
+    numeriUtente=[];
+    for( let i = 1; numeriUtente.length < 5 ;i++){
+        let numeriInseriti = parseInt(prompt('Inserici i numeri uno per volta!'));
+        numeriUtente.push(numeriInseriti);
+    }
+    console.log(numeriUtente);
     return numeriUtente
 }
-console.log(numeriUtente)
+
