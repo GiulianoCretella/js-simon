@@ -30,7 +30,7 @@ for( let i = 1; pcArray.length < 5;i++){
  console.log(pcArray);
 
 let div = document.getElementById('app');
-div.append('Memorizza questi numeri!:' + ' '+ pcArray.join(' - '));
+div.append('Memorizza questi numeri:' + ' '+ pcArray.join(' - '));
 
 // creo un timer di trenta secondi 
 // tramite funzione e prompt faccio inserire i numeri che ricorda l'utente
@@ -48,12 +48,19 @@ function late30(){
 }
 // ottenuti i 5 numeri li confronto con quelli dell'array
 //  stampo i numeri che trovo uguali
-function confrontoNumeri(numeriUtente, pcArray){
-    for(let i = 0; i < numeriUtente.length; i++){
-        if(pcArray.includes(i+1)){
-            console.log("li hai ricordati tutti!");
-        }else if(!pcArray.includes(i+1){
 
+function confrontoNumeri(numeriUtente, pcArray){
+    let message = []
+    let yoursNumberRow = document.createElement('div');
+    yoursNumberRow.setAttribute('class', 'my-row');
+    for(let i = 0; i < numeriUtente.length; i++){
+        if(pcArray.includes(numeriUtente[i])){
+           message.push(numeriUtente[i]);
         }
     }
+    console.log(message)
+    yoursNumberRow.append('I numeri che hai ricordato:'+' '+ message.join(' - '));
+    console.log(yoursNumberRow);
+    div.append(yoursNumberRow);
+
 }
